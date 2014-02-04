@@ -9,8 +9,8 @@ class DbUpdate
 	public function __construct()
 	{
 		$this->mysqli = new mysqli("localhost", "root", "ch3f3n");
-		$this->getSpellIdList();
-		$this->parseHtml();
+		//$this->getSpellIdList();
+		$this->getSpellsFromApi();
 	}	
 
 	private function getSpellIdList()
@@ -33,14 +33,14 @@ class DbUpdate
 	    }
 	}
 
-	private function parseHtml()
+	public function getSpellsFromApi()
 	{
-		foreach($this->spellIdList as $spellId)
-		{
-			$html = file_get_html("http://www.wowhead.com/spell=$spellId");
+			//$jsonResponse = new HttpRequest("http://eu.battle.net/api/wow/spell/34861", HttpRequest::METH_GET);
 
-			var_dump($html);
-		}
+			
+			$result = file_get_contents('http://eu.battle.net/api/data/character/classes');
+
+			var_dump(json_decode($result));
 	}
 }
 
