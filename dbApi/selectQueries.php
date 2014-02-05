@@ -16,7 +16,7 @@ class SelectQueries
 	public function showDatabases()
 	{
 		$mysqli = new mysqli("localhost", "root", "ch3f3n");
-		$sql = "SELECT * FROM charOptimizer.dhSpell WHERE classId = 5";
+		$sql = "SELECT * FROM charOptimize.dhSpell WHERE classId = 5";
 
 		if ($mysqli->connect_errno) {
 		    printf("Connect failed: %s\n", $mysqli->connect_error);
@@ -34,7 +34,7 @@ class SelectQueries
 
 	public function getDirectHeal($classId)
 	{
-		$sql = "SELECT * FROM charOptimizer.dhSpell WHERE classId = $classId";
+		$sql = "SELECT * FROM charOptimize.dhSpell WHERE classId = $classId";
 		$returnArray = array();
 
 		if ($this->mysqli->connect_errno) {

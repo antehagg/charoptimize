@@ -8,12 +8,9 @@ class Spell
 	private $castTime;
 	private $classId;
 	private $gcd;
-	private $gcdCategory;
 	private $spMultiplier;
 	private $cd;
-	private $target;
-	private $school;
-
+	private $targets;
 
 	public function __construct($id)
 	{
